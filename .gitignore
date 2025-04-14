@@ -1,0 +1,25 @@
+# WordPress 핵심 파일
+wp-config.php
+wp-content/uploads/
+
+# 로그 파일
+*.log
+wflogs/
+
+# 데이터베이스 파일
+*.sql
+*.sqlite
+
+# Vercel 특정
+.vercel
+node_modules/
+
+# 캐시 파일
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# 백업 파일
+upgrade-temp-backup/
+*.bak
+*.swp 
