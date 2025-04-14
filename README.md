@@ -2,6 +2,11 @@
 
 이 프로젝트는 WordPress 사이트를 Vercel로 배포하기 위한 설정을 포함하고 있습니다.
 
+## 배포 상태
+
+- 도메인: crepe.fund
+- 상태: 배포 진행 중
+
 ## 사전 요구사항
 
 1. [Vercel CLI](https://vercel.com/download) 설치
