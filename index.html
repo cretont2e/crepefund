@@ -1,168 +1,1236 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CREPE FUND | 크레페 펀드</title>
-  <style>
-    body {
-      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-      line-height: 1.7;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    header {
-      text-align: center;
-      padding: 60px 0;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      border-radius: 10px;
-      margin-bottom: 40px;
-    }
-    h1 {
-      color: #e63946;
-      font-size: 3em;
-      margin: 0;
-      letter-spacing: -1px;
-    }
-    .tagline {
-      font-size: 1.4em;
-      color: #457b9d;
-      margin-top: 10px;
-    }
-    section {
-      background: white;
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    h2 {
-      color: #1d3557;
-      border-bottom: 2px solid #f1faee;
-      padding-bottom: 10px;
-      margin-top: 0;
-    }
-    p {
-      font-size: 16px;
-      color: #555;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-    .feature {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 8px;
-      border-top: 3px solid #457b9d;
-    }
-    .feature h3 {
-      color: #457b9d;
-      margin-top: 0;
-    }
-    .cta {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .button {
-      display: inline-block;
-      background: #e63946;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    .button:hover {
-      background: #d62838;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 14px;
-    }
-    .coming-soon {
-      display: inline-block;
-      background: #1d3557;
-      color: white;
-      font-size: 16px;
-      padding: 8px 20px;
-      border-radius: 30px;
-      margin: 10px 0 30px;
-    }
-    @media (max-width: 768px) {
-      header {
-        padding: 40px 0;
-      }
-      h1 {
-        font-size: 2.2em;
-      }
-      .tagline {
-        font-size: 1.1em;
-      }
-      .features {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon/cropped-Crepe-favi-192x192.png">
+    <title>CREPE - Decentralized Asset Management System</title>
+    <!-- All our previous styles will be here -->
+    <style>
+        /* Base styles */
+        :root {
+            --primary-color: #FF4500;
+            --primary-gradient: linear-gradient(to right, #FF4500, #FF6E40);
+            --secondary-color: #2D1B4E;
+            --background-gradient: linear-gradient(to bottom, #372558, #231544);
+            --card-gradient: linear-gradient(135deg, rgba(255,69,0,0.2), rgba(255,69,0,0.1));
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: var(--background-gradient);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .button {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #FF6E40, #FF8A65);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6rem 2rem;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Why CREPE Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Status Section */
+        .status {
+            text-align: center;
+            padding: 6rem 0;
+            color: white;
+        }
+
+        .status h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-info {
+            margin: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .status-label {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .status-value {
+            text-align: right;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .big-number {
+            font-size: 4rem;
+            font-weight: bold;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 2rem 0;
+        }
+
+        .status-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .status-card {
+            background: rgba(45, 27, 78, 0.4);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: left;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,69,0,0.2);
+        }
+
+        .status-card h3 {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .status-card p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .status-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-info {
+                padding: 0 1rem;
+            }
+            
+            .big-number {
+                font-size: 3rem;
+            }
+        }
+
+        /* Products Section Styles */
+        .products-section {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #231544, #372558);
+            color: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            margin: 0 0 1rem;
+            text-align: center;
+        }
+
+        .product-description {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+        }
+
+        .learn-more {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .learn-more:hover {
+            background: linear-gradient(to right, #FF6E40, #FF8A65);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Dark Mode Enhancement */
+        @media (prefers-color-scheme: dark) {
+            .product-card {
+                background: rgba(255, 255, 255, 0.03);
+            }
+        }
+
+        /* CREPE Index Board Styles */
+        .index-board {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #372558, #231544);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .index-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .index-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .index-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .index-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .index-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .index-description {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .index-description p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .graph-wrapper {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .graph-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .graph-container {
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .index-graph {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .graph-container:hover .index-graph {
+            transform: scale(1.02);
+        }
+
+        .learn-more {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .learn-more:hover {
+            background: linear-gradient(to right, #FF6E40, #FF8A65);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .index-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .index-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .index-card {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Dark Mode Enhancement */
+        @media (prefers-color-scheme: dark) {
+            .index-card {
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .graph-wrapper {
+                background: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        /* Applications Section Styles */
+        .applications {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .app-button {
+            min-width: 150px;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            position: relative;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 400px;
+            margin: 15% auto;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Team Section Update */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Partners Section Update */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .app-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-grid,
+            .partner-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-grid,
+            .partner-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Partners Section Styles */
+        .partners {
+            background: #2D1B4E;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #808080;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .partner-box {
+            aspect-ratio: 1;
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .partner-box.empty {
+            visibility: hidden;
+        }
+
+        .partner-logo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .partner-logo img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #000000;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+            filter: none; /* Remove any filters for the footer logo */
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .social-links, .external-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #FF4500;
+        }
+
+        .github { color: #f0f6fc; }
+        .docs { color: #FF4500; }
+        .contract { color: #FF4500; }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .partner-grid {
+                gap: 1.25rem;
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .partner-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .partner-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .partner-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>CREPE FUND</h1>
-      <div class="tagline">혁신적인 금융 솔루션</div>
-      <span class="coming-soon">새로운 웹사이트 오픈 준비 중</span>
-    </header>
+    <!-- Navigation -->
+    <nav class="nav">
+        <img src="images/logo/logo.png" alt="CREPE" class="nav-logo">
+        <div class="nav-links">
+            <a href="https://crepe.gitbook.io/paam/about-crepe/what-does-crepe-do" class="nav-link" target="_blank">About</a>
+            <a href="https://crepe.gitbook.io/paam" class="nav-link" target="_blank">Docs</a>
+            <a href="https://app.crepe.fund/staking/" class="button" target="_blank">Launch App</a>
+        </div>
+    </nav>
 
-    <section>
-      <h2>크레페 펀드에 오신 것을 환영합니다</h2>
-      <p>
-        크레페 펀드는 혁신적인 금융 솔루션을 제공하는 플랫폼입니다. 
-        저희는 고객 여러분에게 최적화된 투자 기회와 안정적인 수익을 추구합니다.
-        현재 웹사이트가 Vercel 플랫폼으로 마이그레이션 중이며, 곧 향상된 서비스로 찾아뵙겠습니다.
-      </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Manage<br><span>All The Assets</span><br>On Earth</h1>
+            <p>Decentralized Asset Management System</p>
+            <div class="hero-buttons">
+                <a href="https://crepe.gitbook.io/paam/about-crepe/what-does-crepe-do" class="button" target="_blank">One page</a>
+                <a href="https://crepe.gitbook.io/paam/about-crepe/the-advantages-of-paam-tm" class="button" target="_blank">Business Notes</a>
+                <a href="https://crepe.gitbook.io/paam/resources/notes/technical-notes" class="button" target="_blank">Technical Notes</a>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2>서비스 소개</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>맞춤형 금융 솔루션</h3>
-          <p>개인 및 기업 고객을 위한 맞춤형 금융 솔루션을 제공합니다. 고객의 상황과 목표에 따른 최적의 선택을 도와드립니다.</p>
+    <!-- Why CREPE Section -->
+    <section class="why-crepe container">
+        <h2>Why CREPE?</h2>
+        <p>CREPE will help you manage your own destiny.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>For ordinary users:</h3>
+                <p>Forge your future, dream with purpose! Achieve your dreams: DeAMS is your destiny driver!</p>
+            </div>
+            <div class="feature-card">
+                <h3>For financial experts:</h3>
+                <p>Innovate with Impact, bring your ideas to life! Ideas take flight: Elevate with CREPE makerspace!</p>
+            </div>
+            <div class="feature-card">
+                <h3>For asset owners:</h3>
+                <p>Unlock your assets: Ready for financing? Tokenize with elegance: Create cutting-edge financial instruments!</p>
+            </div>
+            <div class="feature-card">
+                <h3>For dreamers unite:</h3>
+                <p>Prosper together, dream bigger! Join CREPE DAO: Walk the path of collective prosperity!</p>
+            </div>
         </div>
-        <div class="feature">
-          <h3>투자 포트폴리오</h3>
-          <p>다양한 시장과 자산 클래스에 걸친 투자 포트폴리오 관리 서비스를 제공합니다. 리스크 관리와 수익 최적화를 동시에 추구합니다.</p>
-        </div>
-        <div class="feature">
-          <h3>자산 관리</h3>
-          <p>전문적인 자산 관리 서비스를 통해 고객님의 자산을 효율적으로 관리합니다. 장기적인 성장과 안정성을 목표로 합니다.</p>
-        </div>
-      </div>
     </section>
 
-    <div class="cta">
-      <p>궁금하신 점이 있으시거나 상담을 원하시면 아래 연락처로 문의해주세요.</p>
-      <a href="mailto:contact@crepe.fund" class="button">문의하기</a>
-    </div>
+    <!-- Status Section -->
+    <section class="status container">
+        <h2>CRE status</h2>
+        <p>(Locked CRE in contracts)</p>
+        
+        <div class="status-info">
+            <div class="status-row">
+                <div class="status-label">CRE Staking</div>
+                <div class="status-value">71,327,686.052 CRE</div>
+            </div>
+            <div class="status-row">
+                <div class="status-label">Swapper</div>
+                <div class="status-value">986,315.1 CRE</div>
+            </div>
+            <div class="status-row">
+                <div class="status-label">Genesis staking</div>
+                <div class="status-value">25,664,183.6 CRE</div>
+            </div>
+            <div class="status-row">
+                <div class="status-label">Presale</div>
+                <div class="status-value">998,937.085 CRE</div>
+            </div>
+        </div>
 
-    <footer>
-      <p>&copy; 2025 CREPE FUND. All rights reserved.</p>
-      <p>현재 웹사이트는 개편 중입니다. 보다 나은 서비스로 찾아뵙겠습니다.</p>
+        <h3>CRE Circulating</h3>
+        <div class="big-number">97,915,012.546</div>
+
+        <div class="status-cards">
+            <div class="status-card">
+                <h3>Genesis staking #01</h3>
+                <p>APR: 16.022%</p>
+                <p>Staked: 11,021,040</p>
+                <p>Ended: 2023. 10. 01 (UTC+9)</p>
+            </div>
+            <div class="status-card">
+                <h3>Genesis staking #02</h3>
+                <p>APR: 24.066%</p>
+                <p>Staked: 4,114,872</p>
+                <p>Ended: 2024. 01. 01 (UTC+9)</p>
+            </div>
+            <div class="status-card">
+                <h3>Genesis staking #03</h3>
+                <p>APR: 36.099%</p>
+                <p>Staked: 7,054,151</p>
+                <p>Ended: 2024. 07. 01 (UTC+9)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="applications">
+        <div class="container">
+            <h2 class="section-title">Applications</h2>
+            <div class="app-buttons">
+                <button class="button app-button" onclick="showPopup()">Staking</button>
+                <button class="button app-button" onclick="showPopup()">Makerspace</button>
+                <button class="button app-button" onclick="showPopup()">CrW™</button>
+            </div>
+        </div>
+
+        <!-- Coming Soon Popup -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close-popup" onclick="hidePopup()">&times;</span>
+                <h3>Coming Soon</h3>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Products Introduction</h2>
+            <div class="product-grid">
+                <!-- CrW™ -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <img src="images/products/crw.png" alt="CrW™">
+                    </div>
+                    <h3>CrW™</h3>
+                    <div class="product-description">
+                        <p>CrW™ (Crepe Work) is a blockchain version of Exchange Traded Fund (ETF) in the traditional financial market. Like an ETF, it is a kind of crypto product that strictly tracks the particular index.</p>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/our-products/market/crw-tm" class="button learn-more" target="_blank">Learn More</a>
+                </div>
+
+                <!-- CrD™ -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <img src="images/products/crd.png" alt="CrD™">
+                    </div>
+                    <h3>CrD™</h3>
+                    <div class="product-description">
+                        <p>CrD™ (Crepe Direct Indexing) is a blockchain version of Direct Indexing (DI) in the traditional financial market. CrD™ can be designed, created, and operated by anyone who pays a small deposit and token issuance fee.</p>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/our-upcoming-products/crd-tm" class="button learn-more" target="_blank">Learn More</a>
+                </div>
+
+                <!-- Algo -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <img src="images/products/algo.png" alt="Algo">
+                    </div>
+                    <h3>Algo</h3>
+                    <div class="product-description">
+                        <p>DAO-certified investment product managers combine their experience and expertise to develop investment strategies and algorithmize them into products. Various Algo products are traded on the market, allowing users to buy and sell market product tokens.</p>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/our-upcoming-products/crd-tm" class="button learn-more" target="_blank">Learn More</a>
+                </div>
+
+                <!-- Lagrangian Protocol -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <img src="images/products/lagrangian.png" alt="Lagrangian Protocol">
+                    </div>
+                    <h3>Lagrangian Protocol</h3>
+                    <div class="product-description">
+                        <p>Lagrangian Protocol seeks consistent, risk-adjusted returns through a delta-neutral strategy, capitalizing on inefficiencies in cryptocurrency market bases and funding rates, while maintaining portfolio stability.</p>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/our-upcoming-products/crd-tm" class="button learn-more" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREPE Index Board Section -->
+    <section class="index-board">
+        <div class="container">
+            <h2 class="section-title">CREPE Index Board</h2>
+            <div class="index-grid">
+                <!-- ATI Top12 -->
+                <div class="index-card">
+                    <div class="index-header">
+                        <img src="images/index/ATI-TOP-12.png" alt="ATI Top12" class="index-icon">
+                        <h3>ATI Top12</h3>
+                    </div>
+                    <div class="index-description">
+                        <p>ATI Top12 index describes an index composed of cryptocurrencies that represents the overall market trends of digital assets. The index is calculated by selecting market participants based on their market capitalization.</p>
+                    </div>
+                    <div class="graph-wrapper">
+                        <div class="graph-label">ATI Top12</div>
+                        <div class="graph-container">
+                            <img src="images/graphs/ATI-Top12.png" alt="ATI Top12 Graph" class="index-graph">
+                        </div>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/crepe-index/crepe-top12-index" class="button learn-more">Learn More</a>
+                </div>
+
+                <!-- ATI K-Coin Top10 -->
+                <div class="index-card">
+                    <div class="index-header">
+                        <img src="images/index/ATI-K-Coin-Top-10.png" alt="ATI K-Coin Top10" class="index-icon">
+                        <h3>ATI K-Coin Top10</h3>
+                    </div>
+                    <div class="index-description">
+                        <p>This index tracks the performance of digital assets traded vigorously both domestically and internationally, particularly focusing on assets traded actively within the domestic market.</p>
+                    </div>
+                    <div class="graph-wrapper">
+                        <div class="graph-label">K-Coin TOP10</div>
+                        <div class="graph-container">
+                            <img src="images/graphs/K-Coin-TOP10.png" alt="K-Coin Top10 Graph" class="index-graph">
+                        </div>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/crepe-index/crepe-k-coin-top10-index" class="button learn-more">Learn More</a>
+                </div>
+
+                <!-- ATI DeFi Top5 -->
+                <div class="index-card">
+                    <div class="index-header">
+                        <img src="images/index/ATI-DeFi-TOP-5.png" alt="ATI DeFi Top5" class="index-icon">
+                        <h3>ATI DeFi Top5</h3>
+                    </div>
+                    <div class="index-description">
+                        <p>DeFi, short for Decentralized Finance, refers to decentralized finance, which is one of the most prominent keywords as various digital assets are designed with decentralization at their core.</p>
+                    </div>
+                    <div class="graph-wrapper">
+                        <div class="graph-label">DeFi Top5</div>
+                        <div class="graph-container">
+                            <img src="images/graphs/DeFi-Top5.png" alt="DeFi Top5 Graph" class="index-graph">
+                        </div>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/crepe-index/crepe-defi-top5-index" class="button learn-more">Learn More</a>
+                </div>
+
+                <!-- ATI Gold -->
+                <div class="index-card">
+                    <div class="index-header">
+                        <img src="images/index/ATI-Gold.png" alt="ATI Gold" class="index-icon">
+                        <h3>ATI Gold</h3>
+                    </div>
+                    <div class="index-description">
+                        <p>When constructing an index, including not only various digital assets but also traditional assets with low correlation can improve diversification, thereby reducing risk for the same return.</p>
+                    </div>
+                    <div class="graph-wrapper">
+                        <div class="graph-label">Gold Portfolio</div>
+                        <div class="graph-container">
+                            <img src="images/graphs/Gold-Portfolio.png" alt="Gold Portfolio Graph" class="index-graph">
+                        </div>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/crepe-index/crepe-gold-portfolio-index" class="button learn-more">Learn More</a>
+                </div>
+
+                <!-- ATI MEME Top5 -->
+                <div class="index-card">
+                    <div class="index-header">
+                        <img src="images/index/ATI-MEME-TOP-5.png" alt="ATI MEME Top5" class="index-icon">
+                        <h3>ATI MEME Top5</h3>
+                    </div>
+                    <div class="index-description">
+                        <p>Meme coins refer to digital assets created based on popular images or characters on the internet and social networking services (SNS). These meme coins have low correlation and high volatility compared to other virtual assets.</p>
+                    </div>
+                    <div class="graph-wrapper">
+                        <div class="graph-label">Meme Top 5</div>
+                        <div class="graph-container">
+                            <img src="images/graphs/Meme-Top-5.png" alt="Meme Top5 Graph" class="index-graph">
+                        </div>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/crepe-index/crepe-meme-top5-index" class="button learn-more">Learn More</a>
+                </div>
+
+                <!-- ATI Altcoin Top10 -->
+                <div class="index-card">
+                    <div class="index-header">
+                        <img src="images/index/ATI-Altcoin-Top10.png" alt="ATI Altcoin Top10" class="index-icon">
+                        <h3>ATI Altcoin Top10</h3>
+                    </div>
+                    <div class="index-description">
+                        <p>This index is designed to facilitate understanding of the overall trends in the virtual asset market through assets excluding Bitcoin and Ethereum.</p>
+                    </div>
+                    <div class="graph-wrapper">
+                        <div class="graph-label">Altcoin Top 10</div>
+                        <div class="graph-container">
+                            <img src="images/graphs/Altcoin-Top-10.png" alt="Altcoin Top10 Graph" class="index-graph">
+                        </div>
+                    </div>
+                    <a href="https://crepe.gitbook.io/paam/crepe-index/crepe-altcoin-top10-index" class="button learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Team Introduction</h2>
+            <p>CREPE will be bringing new spirit to DeFi ecosystem.</p>
+            <div class="team-grid">
+                <!-- First Row -->
+                <div class="team-card">
+                    <img src="images/team/Justin-Park.jpg" alt="Justin Park">
+                    <h3>Justin Park</h3>
+                    <p class="role">COO</p>
+                    <p class="description">Lee&Park Partners CEO<br>
+                    Shinyoung Securities MD<br>
+                    G&A Private Equity MD</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team/Liam-Yi.jpg" alt="Liam Yi">
+                    <h3>Liam Yi</h3>
+                    <p class="role">Chief Economist</p>
+                    <p class="description">Lee&Park Partners President<br>
+                    Forex Division of Forest President</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team/Daniel-Choi.jpg" alt="Daniel Choi">
+                    <h3>Daniel Choi</h3>
+                    <p class="role">CSO / Compliance</p>
+                    <p class="description">Fintech Blockchain Business Institute<br>
+                    Chief Director</p>
+                </div>
+                <!-- Second Row -->
+                <div class="team-card">
+                    <img src="images/team/David-Song.jpg" alt="David Song">
+                    <h3>David Song</h3>
+                    <p class="role">CMO</p>
+                    <p class="description">Lab for Social Strategy Chief<br>
+                    KIDA Research Fellow</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team/Babe-Kim.jpg" alt="Babe Kim">
+                    <h3>Babe Kim</h3>
+                    <p class="role">CIO</p>
+                    <p class="description">Certified Investment Manager<br>
+                    Asset Management Strategist</p>
+                </div>
+                <!-- Empty card for grid alignment -->
+                <div class="team-card" style="visibility: hidden;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">TRUSTED BY</h2>
+            <div class="partner-grid">
+                <!-- Row 1 -->
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/QuillAudits.png" alt="QuillAudits"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Exa Robotics.png" alt="EXA ROBOTICS"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/IPC.png" alt="IPC"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/IUSOLUTION.png" alt="IU SOLUTION"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/LBank.png" alt="LBANK"></div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Polygon.png" alt="Polygon"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Beosin.png" alt="Beosin"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Coinness.png" alt="Coinness"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/The-IMC.png" alt="The IMC"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Bloomverse.png" alt="Bloomverse"></div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/K-Diaspora.png" alt="K-Diaspora"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Uniswap.png" alt="Uniswap"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Avalanche.png" alt="Avalanche"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Hacken.png" alt="Hacken"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Asia Today.png" alt="Asia Today"></div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Solana.png" alt="Solana"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/mexc_logo_white.png" alt="MEXC"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/Bitget.png" alt="Bitget"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/YesStock.png" alt="YesStock"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/CoinGecko-150x150.jpg" alt="CoinGecko"></div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/polygon-icon.png" alt="Polygon Icon"></div>
+                </div>
+                <div class="partner-box">
+                    <div class="partner-logo"><img src="/images/partners/mexc-logo-150x38.png" alt="MEXC Global"></div>
+                </div>
+                <div class="partner-box empty"></div>
+                <div class="partner-box empty"></div>
+                <div class="partner-box empty"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/images/logo/logo.png" alt="CREPE">
+                </div>
+                
+                <div class="footer-links">
+                    <div class="social-links">
+                        <a href="https://t.me/CREPEnews" target="_blank">
+                            <i class="fas fa-paper-plane"></i> News Channel
+                        </a>
+                        <a href="https://t.me/CREPE_ChatGroup" target="_blank">
+                            <i class="fas fa-comments"></i> CREPE | Official Chat Group
+                        </a>
+                        <a href="https://t.me/CREPE_KR" target="_blank">
+                            <i class="fas fa-comments"></i> CREPE | Official Korean Chat Group
+                        </a>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://x.com/CREPENEWS" target="_blank">
+                            <i class="fab fa-x-twitter"></i> X (old Twitter)
+                        </a>
+                        <a href="https://blog.bcrepe.fund/" target="_blank">
+                            <i class="fas fa-blog"></i> Blog (Medium)
+                        </a>
+                    </div>
+                    
+                    <div class="external-links">
+                        <a href="https://github.com/Crepeinc" target="_blank" class="github">
+                            <i class="fab fa-github"></i> Github
+                        </a>
+                        <a href="https://crepe.gitbook.io/paam" target="_blank" class="docs">
+                            <i class="fas fa-book"></i> Docs
+                        </a>
+                        <a href="https://crepe.gitbook.io/paam/resources/contract-address" target="_blank" class="contract">
+                            <i class="fas fa-file-contract"></i> Contract
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Copyright © 2024 Crepe. All rights reserved.
+            </div>
+        </div>
     </footer>
-  </div>
+
+    <script>
+    function showPopup() {
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function hidePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    // Close popup when clicking outside
+    window.onclick = function(event) {
+        const popup = document.getElementById('popup');
+        if (event.target == popup) {
+            popup.style.display = 'none';
+        }
+    }
+    </script>
 </body>
-</html> 
+</html>

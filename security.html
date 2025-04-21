@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREPE FUND | 보안 상태</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #1d3557;
+      color: white;
+      padding: 20px 0;
+      margin-bottom: 30px;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    .security-dashboard {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    .security-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .security-header h2 {
+      margin: 0;
+      color: #1d3557;
+    }
+    .security-status {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .security-section {
+      margin-bottom: 25px;
+    }
+    .security-section h3 {
+      color: #1d3557;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .security-items {
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+    }
+    .security-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .security-item:last-child {
+      border-bottom: none;
+    }
+    .security-item .title {
+      display: flex;
+      align-items: center;
+    }
+    .security-item .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .icon.success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .icon.warning {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+    .icon.danger {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .security-item .status {
+      font-weight: 500;
+    }
+    .status.success {
+      color: #155724;
+    }
+    .status.warning {
+      color: #856404;
+    }
+    .status.danger {
+      color: #721c24;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px 0;
+      border-top: 1px solid #dee2e6;
+      color: #6c757d;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #1d3557;
+      text-decoration: none;
+    }
+    .security-scan {
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .security-scan p {
+      margin: 0;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #1d3557;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #162a45;
+    }
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        margin-top: 15px;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 10px;
+      }
+      .security-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .security-status {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>CREPE FUND 보안 대시보드</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="security.html">보안</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="security-dashboard">
+      <div class="security-header">
+        <h2>사이트 보안 상태</h2>
+        <div class="security-status">안전</div>
+      </div>
+
+      <div class="security-scan">
+        <p>마지막 보안 스캔: 2025년 4월 14일 오전 10:30</p>
+        <a href="#" class="btn">지금 스캔하기</a>
+      </div>
+
+      <div class="security-section">
+        <h3>방화벽 상태</h3>
+        <div class="security-items">
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>실시간 트래픽 모니터링</span>
+            </div>
+            <div class="status success">활성화</div>
+          </div>
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>브루트포스 공격 방지</span>
+            </div>
+            <div class="status success">활성화</div>
+          </div>
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>악성 IP 차단</span>
+            </div>
+            <div class="status success">활성화 (1,243개 IP 차단됨)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="security-section">
+        <h3>스캔 결과</h3>
+        <div class="security-items">
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>핵심 파일 무결성</span>
+            </div>
+            <div class="status success">이상 없음</div>
+          </div>
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>플러그인 취약점</span>
+            </div>
+            <div class="status success">발견되지 않음</div>
+          </div>
+          <div class="security-item">
+            <div class="title">
+              <div class="icon warning">!</div>
+              <span>시스템 업데이트</span>
+            </div>
+            <div class="status warning">4개 업데이트 필요</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="security-section">
+        <h3>로그인 보안</h3>
+        <div class="security-items">
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>2단계 인증</span>
+            </div>
+            <div class="status success">활성화</div>
+          </div>
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>로그인 시도 제한</span>
+            </div>
+            <div class="status success">활성화 (5회 실패 시 잠금)</div>
+          </div>
+          <div class="security-item">
+            <div class="title">
+              <div class="icon success">✓</div>
+              <span>강력한 비밀번호 정책</span>
+            </div>
+            <div class="status success">활성화</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 CREPE FUND. All rights reserved.</p>
+      <p>이 페이지는 Wordfence 보안 플러그인을 기반으로 한 정적 HTML 표현입니다.</p>
+    </div>
+  </footer>
+</body>
+</html> 
