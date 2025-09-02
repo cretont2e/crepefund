@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="../images/favicon/cropped-BCREPE-logo-192x192.png" />
+  <title>Under Construction - CREPE</title>
+  <style>
+    :root {
+      --primary-color: #2563EB;
+      --primary-gradient: linear-gradient(to right, #22C55E, #2563EB);
+      --bg-start: #0B1220;
+      --bg-end: #0F172A;
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji";
+      background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      max-width: 720px;
+      width: 100%;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      margin: 0 0 0.75rem 0;
+      font-size: 2rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    p { opacity: 0.9; margin: 0.25rem 0 1.5rem; }
+    .actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    a.button {
+      display: inline-block;
+      background: var(--primary-gradient);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.8rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    a.button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Under Construction</h1>
+    <p>This page is currently under development.</p>
+    <p>Please check back soon.</p>
+    <div class="actions">
+      <a class="button" href="/">Back to Home</a>
+      <a class="button" href="https://crepe.gitbook.io/paam" target="_blank" rel="noopener">Docs</a>
+    </div>
+  </main>
+</body>
+</html>

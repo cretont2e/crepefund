@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/favicon/cropped-Crepe-favi-192x192.png">
+    <link rel="icon" type="image/png" href="images/favicon/cropped-BCREPE-logo-192x192.png">
     <title>CREPE - Decentralized Asset Management System</title>
     <!-- All our previous styles will be here -->
     <style>
         /* Base styles */
         :root {
-            --primary-color: #FF4500;
-            --primary-gradient: linear-gradient(to right, #FF4500, #FF6E40);
-            --secondary-color: #2D1B4E;
-            --background-gradient: linear-gradient(to bottom, #372558, #231544);
-            --card-gradient: linear-gradient(135deg, rgba(255,69,0,0.2), rgba(255,69,0,0.1));
+            --primary-color: #2563EB;
+            --primary-gradient: linear-gradient(to right, #22C55E, #2563EB);
+            --secondary-color: #0F172A;
+            --background-gradient: linear-gradient(to bottom, #0B1220, #0F172A);
+            --card-gradient: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(34,197,94,0.1));
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji";
             background: var(--background-gradient);
             color: white;
             min-height: 100vh;
@@ -67,6 +67,34 @@
             color: var(--primary-color);
         }
 
+        /* Dropdown */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            min-width: 220px;
+            padding: 0.5rem 0;
+            z-index: 1001;
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .dropdown-menu a:hover {
+            background: rgba(255,255,255,0.08);
+            color: var(--primary-color);
+        }
+
         .button {
             background: var(--primary-gradient);
             color: white;
@@ -81,9 +109,9 @@
         }
 
         .button:hover {
-            background: linear-gradient(to right, #FF6E40, #FF8A65);
+            filter: brightness(1.1);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
         }
 
         /* Hero Section */
@@ -198,12 +226,12 @@
         }
 
         .status-card {
-            background: rgba(45, 27, 78, 0.4);
+            background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
             border-radius: 12px;
             text-align: left;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,69,0,0.2);
+            border: 1px solid rgba(37, 99, 235, 0.2);
         }
 
         .status-card h3 {
@@ -238,7 +266,7 @@
         /* Products Section Styles */
         .products-section {
             padding: 6rem 0;
-            background: linear-gradient(to bottom, #231544, #372558);
+            background: linear-gradient(to bottom, #0F172A, #0B1220);
             color: white;
         }
 
@@ -324,9 +352,9 @@
         }
 
         .learn-more:hover {
-            background: linear-gradient(to right, #FF6E40, #FF8A65);
+            filter: brightness(1.1);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
         }
 
         /* Responsive Design */
@@ -356,7 +384,7 @@
         /* CREPE Index Board Styles */
         .index-board {
             padding: 6rem 0;
-            background: linear-gradient(to bottom, #372558, #231544);
+            background: linear-gradient(to bottom, #0F172A, #0B1220);
             color: white;
         }
 
@@ -510,54 +538,7 @@
             }
         }
 
-        /* Applications Section Styles */
-        .applications {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        .app-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .app-button {
-            min-width: 150px;
-        }
-
-        /* Popup Styles */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-        }
-
-        .popup-content {
-            position: relative;
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            max-width: 400px;
-            margin: 15% auto;
-            text-align: center;
-            color: var(--secondary-color);
-        }
-
-        .close-popup {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #666;
-        }
+        
 
         /* Team Section Update */
         .team-grid {
@@ -566,6 +547,24 @@
             gap: 2rem;
             margin-top: 3rem;
         }
+
+        .team-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .team-card img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 1rem;
+        }
+        .team-card h3 { margin: 0.5rem 0 0.25rem; }
+        .team-card .role { color: var(--primary-color); margin: 0 0 0.5rem; font-weight: 600; }
+        .team-card .description { font-size: 0.95rem; opacity: 0.9; }
 
         /* Partners Section Update */
         .partner-grid {
@@ -576,11 +575,6 @@
         }
 
         @media (max-width: 768px) {
-            .app-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
             .team-grid,
             .partner-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -596,7 +590,7 @@
 
         /* Partners Section Styles */
         .partners {
-            background: #2D1B4E;
+            background: #0B1220;
             padding: 4rem 0;
         }
 
@@ -690,7 +684,7 @@
         }
 
         .footer a:hover {
-            color: #FF4500;
+            color: var(--primary-color);
         }
 
         .github { color: #f0f6fc; }
@@ -747,14 +741,24 @@
         <div class="nav-links">
             <a href="https://crepe.gitbook.io/paam/about-crepe/what-does-crepe-do" class="nav-link" target="_blank">About</a>
             <a href="https://crepe.gitbook.io/paam" class="nav-link" target="_blank">Docs</a>
-            <a href="https://app.crepe.fund/staking/" class="button" target="_blank">Launch App</a>
+            <a href="https://medium.com/@CrepeFund" class="nav-link" target="_blank">Blog</a>
+            <a href="https://gst.crepe.fund" class="nav-link" target="_blank">GST</a>
+            <a href="https://app.crepe.fund/staking/" class="nav-link" target="_blank">Staking</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle">Under Development ▾</a>
+                <div class="dropdown-menu">
+                    <a href="https://crepe.fund/UnderConstruction" target="_blank">Crypto ETF</a>
+                    <a href="https://index.crepe.fund/" target="_blank">Index</a>
+                    <a href="https://crepe.fund/UnderConstruction" target="_blank">Lagrangian. Protocol</a>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Manage<br><span>All The Assets</span><br>On Earth</h1>
+            <h1>Prepare the Coming World of Cryto ETF and Stablecoins</h1>
             <p>Decentralized Asset Management System</p>
             <div class="hero-buttons">
                 <a href="https://crepe.gitbook.io/paam/about-crepe/what-does-crepe-do" class="button" target="_blank">One page</a>
@@ -837,25 +841,7 @@
         </div>
     </section>
 
-    <!-- Applications Section -->
-    <section class="applications">
-        <div class="container">
-            <h2 class="section-title">Applications</h2>
-            <div class="app-buttons">
-                <button class="button app-button" onclick="showPopup()">Staking</button>
-                <button class="button app-button" onclick="showPopup()">Makerspace</button>
-                <button class="button app-button" onclick="showPopup()">CrW™</button>
-            </div>
-        </div>
-
-        <!-- Coming Soon Popup -->
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <span class="close-popup" onclick="hidePopup()">&times;</span>
-                <h3>Coming Soon</h3>
-            </div>
-        </div>
-    </section>
+    
     
     <!-- Products Section -->
     <section class="products-section">
@@ -1073,8 +1059,14 @@
                     <p class="description">Certified Investment Manager<br>
                     Asset Management Strategist</p>
                 </div>
-                <!-- Empty card for grid alignment -->
-                <div class="team-card" style="visibility: hidden;"></div>
+                <div class="team-card">
+                    <img src="images/team/Nick-Lee.jpg" alt="Nick Lee">
+                    <h3>Nick Lee</h3>
+                    <p class="role">CTO</p>
+                    <p class="description">CEO at Crepe, Inc.<br>
+                    Professor at Konkuk University</p>
+                    <p><a class="nav-link" href="https://www.linkedin.com/in/youngwhan-nick-lee-71a89217/" target="_blank">LinkedIn</a></p>
+                </div>
             </div>
         </div>
     </section>
@@ -1207,27 +1199,10 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                Copyright © 2024 Crepe. All rights reserved.
+                Copyright 2024 Crepe. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <script>
-    function showPopup() {
-        document.getElementById('popup').style.display = 'block';
-    }
-
-    function hidePopup() {
-        document.getElementById('popup').style.display = 'none';
-    }
-
-    // Close popup when clicking outside
-    window.onclick = function(event) {
-        const popup = document.getElementById('popup');
-        if (event.target == popup) {
-            popup.style.display = 'none';
-        }
-    }
-    </script>
 </body>
 </html>
