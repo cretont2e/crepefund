@@ -87,3 +87,29 @@ I want to redo the website in the following way:
 
 - __Local Preview__
   - Served via WSL: http://127.0.0.1:8000 (proxy available in IDE).
+
+## Deployment (2025-09-03)
+
+- SSH configured for GitHub account `cretont2e` in WSL.
+  - Key: `~/.ssh/id_ed25519_cretont2e` (added to GitHub).
+  - SSH config alias `github.com-cretont2e` with `IdentitiesOnly yes`.
+  - Repo remote set to `git@github.com-cretont2e:cretont2e/crepefund.git`.
+- Pushed to `main`; Vercel auto-deployed using minimal `vercel.json` (static headers only).
+- Production domain: https://crepe.fund
+
+## Remaining Loose Ends
+
+- Provide `images/team/Nick-Lee.jpg` (or adjust path) to avoid a broken image.
+- Typos to optionally fix:
+  - `index.html` hero: “Cryto” → “Crypto”.
+  - `UnderConstruction.html` message: “Consruction” → “Construction”.
+- Vercel project hygiene:
+  - Ensure Automatic Deployments are ON and GitHub App authorized for this repo.
+- Optional code cleanup:
+  - Remove `index.php` if unused (avoid PHP detection).
+- Optional UX:
+  - Add a mobile-friendly dropdown toggle for small screens.
+- Optional theme polish:
+  - Fine-tune typography/spacing to match gst.crepe.fund more closely.
+- Docs cleanup:
+  - Update `README.md` to reflect a static site on Vercel (current README mentions WordPress migration).
