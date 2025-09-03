@@ -10,7 +10,7 @@ I want to redo the website in the following way:
    - Add a button to "Blog" and connect it to "https://medium.com/@CrepeFund".
    - Add a button to "GST" and connect it to "https://gst.crepe.fund".
    - Add another button "Staking", and connect it to "https://app.crepe.fund/staking/"
-   - Add another button "under development" and make a pulldown menu with options "Crypto ETF", "Index", and "Lagrangian. Protocol". They must be connected to "under Construction" page to "https://crepe.fund/UnderConstruction". It means the "under Construction" page should be created.
+   - Add another button "under development" and make a pulldown menu with options "Crypto ETF", "Signal & Index", and "Lagrangian Protocols". They must be connected to "under Construction" page to "https://crepe.fund/UnderConstruction". It means the "under Construction" page should be created.
 
 
 3. In the hero section, change the phrase "Manage All The Assets On Earth" to "Prepare the Coming World of Cryto ETF and Stablecoins". The paragraph and the buttons below should stay the same.
@@ -49,8 +49,8 @@ I want to redo the website in the following way:
   - Added: Blog → https://medium.com/@CrepeFund, GST → https://gst.crepe.fund, Staking → https://app.crepe.fund/staking/
   - Added dropdown label: "Under Development" with items:
     - Crypto ETF → https://crepe.fund/UnderConstruction
-    - Index → https://index.crepe.fund/
-    - Lagrangian. Protocol → https://crepe.fund/UnderConstruction
+    - Signal & Index → https://index.crepe.fund/
+    - Lagrangian Protocols → https://crepe.fund/UnderConstruction
   - Created Under Construction pages for development/production:
     - /UnderConstruction/index.html
     - /UnderConstruction.html
